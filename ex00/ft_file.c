@@ -6,14 +6,14 @@
 /*   By: stfernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 16:58:08 by stfernan          #+#    #+#             */
-/*   Updated: 2021/03/27 16:58:09 by stfernan         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:09:25 by stfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "ft.h"
 
 int		ft_file_size(char *filename)
 {
@@ -22,12 +22,12 @@ int		ft_file_size(char *filename)
 	char	ch;
 
 	size = 0;
-	fd = open(filename, O_RDONLY);//commande pour open le fichier
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		return (-1);//si open a rate il renvoie -1, on return -1 pour savoir qu'un pb a eu lieu
-	while (read(fd, &ch, 1) > 0)//boucle pour calculer le nombre d'octet a lire. Read renvoie 0 auand il arrive en fin de fichier, on peut ce servir de ca pr calculer
+		return (-1);
+	while (read(fd, &ch, 1) > 0)
 		size++;
-	close(fd);//on ferme le fichier
+	close(fd);
 	return (size);
 }
 
@@ -42,10 +42,10 @@ char	*ft_read_file(char *filename, int *size)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
-	if(!(content = malloc(*size + 1)))
+	if (!(content = malloc(*size + 1)))
 		return (0);
-	read(fd, content, *size);//on lit le fichier, read prend comme parametre le fd, un buffer de destination et le nb d'octet a lire
-	close(fd);//on ferme le fichier
+	read(fd, content, *size);
+	close(fd);
 	content[*size] = '\n';
 	return (content);
 }

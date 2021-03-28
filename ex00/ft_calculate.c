@@ -6,16 +6,12 @@
 /*   By: stfernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 16:57:30 by stfernan          #+#    #+#             */
-/*   Updated: 2021/03/28 12:42:37 by stfernan         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:08:31 by stfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdlib.h>
-#include <stdio.h>
-
-#include "ft_string.h"
-#include "ft_dictionary.h"
+#include "ft.h"
 
 char	*ft_complement(char *nbr)
 {
@@ -25,7 +21,7 @@ char	*ft_complement(char *nbr)
 	char	*complemented_nbr;
 
 	complement_len = 0;
-	nbr_len = ft_strlen(nbr);//on calcule le nbre de char du nombre
+	nbr_len = ft_strlen(nbr);
 	if (nbr_len % 3 == 1)
 		complement_len = 2;
 	else if (nbr_len % 3 == 2)
@@ -122,12 +118,12 @@ char	*ft_calculate(char *nbr)
 	t_string	str;
 	char		*complement_nbr;
 
-	str = ft_string_new();//on initie str avec des valeurs de base (structure)
-	if (nbr[0] == '0' && nbr[1] == '\0')//si on a juste 0
+	str = ft_string_new();
+	if (nbr[0] == '0' && nbr[1] == '\0')
 	{
 		if (!g_small_dict[0])
 			return (0);
-		ft_string_append_str(&str, g_small_dict[0]);//on renvoie le char
+		ft_string_append_str(&str, g_small_dict[0]);
 		return (str.data);
 	}
 	complement_nbr = ft_complement(nbr);

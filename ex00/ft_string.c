@@ -6,13 +6,13 @@
 /*   By: stfernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 16:59:56 by stfernan          #+#    #+#             */
-/*   Updated: 2021/03/27 16:59:58 by stfernan         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:02:17 by stfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "ft_string.h"
+#include "ft.h"
 
 t_string	ft_string_new(void)
 {

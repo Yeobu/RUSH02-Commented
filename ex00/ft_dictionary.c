@@ -6,13 +6,11 @@
 /*   By: stfernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 16:56:49 by stfernan          #+#    #+#             */
-/*   Updated: 2021/03/27 16:56:52 by stfernan         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:04:16 by stfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "ft_file.h"
-#include "ft_dictionary_helper.h"
+#include "ft.h"
 
 char	*g_small_dict[101];
 char	*g_big_dict[12];
@@ -55,7 +53,7 @@ char	*ft_dictionary_load(char *filename)
 	int		size;
 	char	*content;
 
-	content = ft_read_file(filename, &size);//on apl la fonction pour read et avoir notre contenu dans content
+	content = ft_read_file(filename, &size);
 	if (content == 0)
 		return (0);
 	ft_cleanup_dict(g_small_dict, g_big_dict);

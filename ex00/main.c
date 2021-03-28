@@ -6,15 +6,13 @@
 /*   By: stfernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 16:57:55 by stfernan          #+#    #+#             */
-/*   Updated: 2021/03/27 16:57:57 by stfernan         ###   ########.fr       */
+/*   Updated: 2021/03/28 17:57:59 by stfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdlib.h>
 #include <unistd.h>
-#include "ft_calculate.h"
-#include "ft_dictionary.h"
+#include "ft.h"
 
 void	ft_putstr(char *s)
 {
@@ -49,8 +47,6 @@ int		check_error(int argc, char **argv)
 			return (0);
 		len++;
 	}
-	//if (20 < len)
-	//	return (0);
 	return (1);
 }
 
